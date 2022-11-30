@@ -28,8 +28,8 @@ function draw(eventData) {
 
 
     context.fillStyle = "cyan";
-    context.fillRect(eventData.x / 200, eventData.y, width, 20);
-    context.fillRect(eventData.x, eventData.y / 200, 20, width);
+    context.fillRect(eventData.x / 200, eventData.y, width, 2);
+    context.fillRect(eventData.x, eventData.y / 200, 2, width);
 
 
 
