@@ -28,13 +28,30 @@ function draw(eventData) {
 
 
     context.fillStyle = "cyan";
-    context.fillRect(eventData.x / 200, eventData.y, width, 2);
-    context.fillRect(eventData.x, eventData.y / 200, 2, width);
 
+    context.beginPath(eventData.x + 150, eventData.y + 50);
+    context.moveTo(50, 50);
+    context.lineTo(150, 50);
+    context.moveTo(150, 50);
+    context.lineTo(150, 70);
+    context.moveTo(50, 50);
+    context.lineTo(50, 200);
+    context.moveTo(50, 200);
+    context.lineTo(150, 200);
+    context.moveTo(150, 200);
+    context.lineTo(150, 150);
+    context.moveTo(150, 150);
+    context.lineTo(100, 150);
 
+    context.moveTo(200, 50);
+    context.lineTo(200, 75);
+    context.moveTo(200, 85);
+    context.lineTo(200, 200);
 
-
-
+    context.moveTo(250, 50);
+    context.lineTo(250, 200);
+    context.moveTo(250, 200);
+    context.lineTo(325, 200);
 
 
 }

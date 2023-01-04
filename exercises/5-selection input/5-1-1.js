@@ -9,15 +9,13 @@ let height = context.canvas.height;
 drawDots();
 
 function drawDots() {
-    for (let i = 0; i < 15000; i++) {
+    for (let i = 0; i < 1500; i++) {
         let x = Math.random() * width;
 
         if (x < width / 2) {
-            context.fillStyle = "red";
-        } else {
-            context.fillStyle = "green";
+            context.fillStyle = "black";
         }
-        Utils.fillCircle(x, Math.random() * height, 5);
+        Utils.fillCircle(x, Math.random() * height, 2);
     }
 
 

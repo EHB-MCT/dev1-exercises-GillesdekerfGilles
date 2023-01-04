@@ -28,19 +28,19 @@ function draw() {
         //background
         context.fillStyle = "";
         context.fillRect(0, 0, width / 2, height / 2);
-        context.fillStyle = "white";
+        context.fillStyle = "black";
         context.fillRect(width / 2, 0, width, height / 2);
-        context.fillStyle = "white";
+        context.fillStyle = "black";
         context.fillRect(0, height / 2, width / 2, height / 2);
-        context.fillStyle = "white";
+        context.fillStyle = "black";
         context.fillRect(width / 2, height / 2, width / 2, height / 2);
 
-        context.fillStyle = "white";
+        context.fillStyle = "black";
 
         context.lineWidth = 10;
         Utils.fillCircle(width / 2, height / 2, 100);
         context.lineWidth = 10;
-        context.strokeStyle = "white";
+        context.strokeStyle = "black";
         context.stroke();
         //update
         if (xPos >= width || xPos < 0) {

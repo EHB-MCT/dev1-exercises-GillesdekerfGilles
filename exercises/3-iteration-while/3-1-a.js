@@ -15,10 +15,12 @@ function draw() {
 function drawLines() {
     let i = 0;
     while (i < 11) {
-        console.log("Loop", i);
+        console.log(i);
 
         Utils.drawLine(75, 75 + 25 * i, 325, 75 + 25 * i);
 
         i++;
+
     }
+
 }
