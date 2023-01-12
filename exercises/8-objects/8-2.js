@@ -18,8 +18,8 @@ function setup() {
         let ball = {
             x: Utils.randomNumber(maxSize, width - maxSize),
             y: Utils.randomNumber(maxSize, height - maxSize),
-            ySpeed: Utils.randomNumber(-10, 10),
-            xSpeed: Utils.randomNumber(-10, 10),
+            ySpeed: Utils.randomNumber(-10, 20),
+            xSpeed: Utils.randomNumber(-10, 20),
             size: Utils.randomNumber(15, 50),
             hue: Utils.randomNumber(0, 360)
         };

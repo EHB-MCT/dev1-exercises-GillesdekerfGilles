@@ -10,19 +10,16 @@ drawDots();
 
 function drawDots() {
     for (let i = 0; i < 15000; i++) {
-        let y = Math.random() * height;
+        let x = Math.random() * width;
 
-        if (y < height / 3) {
-            context.fillStyle = "red";
-        } else if (y < height / 3 * 2) {
-            context.fillStyle = "white";
+        if (x < width / 3) {
+            context.fillStyle = "black";
+        } else if (x < width / 3 * 2) {
+            context.fillStyle = "yellow";
         } else {
-            context.fillStyle = "blue";
+            context.fillStyle = "red";
         }
-
-
-        Utils.fillCircle(Math.random() * width, y, 5);
+        Utils.fillCircle(x, Math.random() * height, 4);
     }
-
 
 }

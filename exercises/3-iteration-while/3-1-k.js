@@ -6,17 +6,11 @@ draw();
 
 function draw() {
     context.lineWidth = 2;
-    context.strokeStyle = "white";
-    context.fillStyle = "#3498DB";
-    context.fillRect(50, 50, 300, 300);
-    drawSunBeams();
-}
+    context.strokeRect(50, 50, 400, 400);
 
-function drawSunBeams() {
-    let i = 50;
-    while (i <= ) {
-        Utils.drawLine(, , , , );
-        Utils.drawLine(, , , , );
-        i = i + 10;
+    for (let i = 0; i < 5000; i++) {
+        let x = 50 + Math.floor(Math.random() * 396);
+        let y = 50 + Math.floor(Math.random() * 396);
+        context.fillRect(x, y, 4, 4);
     }
 }

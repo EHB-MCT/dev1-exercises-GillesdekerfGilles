@@ -9,22 +9,23 @@ drawLines();
 
 
 function drawLines() {
+    context.lineWidth = "2";
     context.strokeStyle = ("white");
-    let step = 10;
+    let step = 25;
     let amount = width / step;
-    let amounter = height / step;
+
 
     for (let i = 0; i < amount; i++) {
         Utils.drawLine((step * i), 0, width - (step * i), height);
-        Utils.drawLine(0, (step * i), width, height - (step * i));
-        console.log
+        Utils.drawLine(0, (step / 1.875 * i), width, height - (step / 1.875 * i));
+        console.log();
     }
 }
 
 function drawRect() {
     context.beginPath();
     context.rect(0, 0, width, height)
-    context.fillStyle = "orange"
+    context.fillStyle = "green"
     context.stroke();
     context.fill();
 }

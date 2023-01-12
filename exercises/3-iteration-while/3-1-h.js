@@ -15,8 +15,10 @@ function draw() {
 function drawMoreConcentricCircles() {
     context.lineWidth = 2;
     let i = 10;
-    while (i > 0) {
-        Utils.strokeCircle(200, 200, );
-        i = ;
+    while (i < 100) {
+
+        context.strokeStyle = "white";
+        Utils.strokeCircle(200, 200, 15 * i - 150);
+        i++;
     }
 }

@@ -1,86 +1,48 @@
-'use strict';
-
+"use strict";
 import context from "../../scripts/context.js";
 import * as Utils from "../../scripts/utils.js";
 
 let width = context.canvas.width;
 let height = context.canvas.height;
 
-
-let xPos = 0;
-let yPos = 0;
-let ySpeed = 5;
-let xSpeed = 5;
-let frameCount = 0;
-
+let size = 50;
+let x = Utils.randomNumber(size, width - size);
+let y = Utils.randomNumber(size, height - size);
+let hSpeed = 10;
+let vSpeed = 10;
 let isPlaying = true;
-window.onclick = drawCircle;
 
+document.onmousedown = click;
+
+/**
+ * 
+ * @param {MouseEvent} e 
+ */
+function click(e) {
+    console.log(e.pageX + " " + e.pageY);
+    if (Utils.calculateDistance(e.pageX / 2, e.pageY, x, y) < size) {
+        isPlaying = false;
+        context.fillStyle = "red";
+        Utils.fillCircle(e.pageX, e.pageY, size / 2);
+    }
+}
 
 draw();
 
-
-
-
 function draw() {
-    console.log("Draw Loop");
     if (isPlaying) {
-        //background
-        context.fillStyle = "";
-        context.fillRect(0, 0, width / 2, height / 2);
-        context.fillStyle = "black";
-        context.fillRect(width / 2, 0, width, height / 2);
-        context.fillStyle = "black";
-        context.fillRect(0, height / 2, width / 2, height / 2);
-        context.fillStyle = "black";
-        context.fillRect(width / 2, height / 2, width / 2, height / 2);
-
-        context.fillStyle = "black";
-
-        context.lineWidth = 10;
-        Utils.fillCircle(width / 2, height / 2, 100);
-        context.lineWidth = 10;
-        context.strokeStyle = "black";
-        context.stroke();
-        //update
-        if (xPos >= width || xPos < 0) {
-            xSpeed = -xSpeed;
-        }
-
-        if (yPos >= height || yPos < 0) {
-            ySpeed = -ySpeed;
-        }
-
-        yPos += ySpeed;
-        xPos += xSpeed;
-
+        context.fillStyle = "white";
+        context.fillRect(0, 0, width, height);
         context.fillStyle = "blue";
-        Utils.fillCircle(xPos, yPos, 50);
-
-        frameCount++;
-
+        Utils.fillCircle(x, y, size);
+        x += hSpeed;
+        y += vSpeed;
+        if (x >= width - size || x <= size) {
+            hSpeed *= -1;
+        }
+        if (y >= height - size || y <= size) {
+            vSpeed *= -1;
+        }
         requestAnimationFrame(draw);
     }
-
-
-
-}
-
-function drawCircle(eventData) {
-    console.log(eventData.x, eventData.y);
-
-    let distance = Utils.calculateDistance(xPos, yPos, eventData.x, eventData.y);
-
-    console.log(distance);
-    if (distance < 70) {
-        context.fillStyle = "red";
-        isPlaying = false;
-
-        Utils.fillCircle(eventData.x, eventData.y, 20);
-
-    }
-
-
-
-
 }
